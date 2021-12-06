@@ -1,0 +1,484 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root{
+    --dark-mode: #353535;
+    --body-color: #f8f8ff;
+    --white-color: #fff;
+    --gray-color: rgb(245, 244, 244);
+    --plus-color: #368631;
+    --minus-color: #9d0f00;
+    --amount-color:#0000cd;
+    --color-delete: #ff3b2f;
+    --hover-delete: rgb(255, 102, 102);
+    --hover-add: #3939fd;
+}
+
+/* LAYOUT */
+body{
+    font-family: 'Poppins', sans-serif;
+    background: var(--body-color);
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+	background-color: var(--dark-mode);
+	color: var(--white-color);
+}
+
+/*HEADER */
+header{
+    width: 100%;
+    height: 12rem;
+}
+
+.headerTop{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mode{
+    display: flex;
+    justify-content: right;
+    margin-top: 0.6rem;
+}
+
+#mode-selector{
+    width: 7rem;
+    height: 1.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: var(--dark-mode);
+    color: var(--white-color);
+}
+
+#mode-selector.dark-mode {
+	background-color: var(--white-color);
+	color: var(--dark-mode);
+}
+
+.company{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+}
+
+#logo{
+    color: var(--dark-mode);
+}
+
+#logo.dark-mode{
+    color: var(--white-color);
+}
+
+.information{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.areaInformation{
+    background: var(--gray-color);
+    width: 30%;
+    height: 6rem;
+    text-align: center;
+    border-radius: 0.6rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moneyDeposit{
+    color: var(--plus-color);
+    text-transform: uppercase;
+}
+
+.cashOut{
+    color: var(--minus-color);
+    text-transform: uppercase;
+}
+
+.amount{
+    color: var(--amount-color);
+    text-transform: uppercase;
+}
+
+/* MODAL */
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.open{
+    display: flex;
+}
+
+.areaModal{
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--white-color);
+    border-radius: 5px;
+}
+
+.areaModal h2{
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    color: var(--dark-mode);
+}
+
+.areaModal label{
+    width: 85%;
+    color: var(--dark-mode);
+}
+
+.areaModal input{
+    width: 90%;
+    height: 2rem;
+    background: #ddd;
+    margin-bottom: 0.6rem;
+    border-radius: 5px;
+    border: none;
+    padding-left: 0.5rem;
+    outline: 0;
+}
+
+.buttonsModal{
+    width: 100%;
+    text-align: center
+}
+
+.buttonsModal button{
+    width: 20%;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.buttonsModal button:last-child{
+    margin-left: 0.6rem;
+}
+
+.buttonsModal #send{
+    background-color: var(--amount-color);
+    color: var(--white-color);
+    transition: 0.4s;
+}
+
+.buttonsModal #send:hover{
+    background: var(--hover-add);
+}
+
+.buttonsModal #cancel{
+    background-color: var(--color-delete);
+    color: var(--white-color);
+    transition: 0.4s;
+}
+
+.buttonsModal #cancel:hover{
+    background: var(--hover-delete);
+}
+/* MODAL END*/
+
+/* MAIN */
+main{
+    width: 100%;
+    height: auto;
+    margin-top: 1.5rem; 
+}
+
+.container{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.transaction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transaction h2{
+    margin-right: 0.6rem;
+    text-transform: uppercase;
+    color: var(--dark-mode);
+}
+
+.transaction button{
+    margin-left: 0.8rem;
+    width: 4rem;
+    height: 1.6rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--amount-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.transaction button:hover{
+    background: var(--hover-add);
+    color: var(--white-color);
+}
+
+.transactions{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.transactions h2{
+    text-transform: uppercase;
+    color: var(--dark-mode);
+    margin-left: 0.6rem;
+}
+
+.transactions h2.dark-mode,
+.transaction h2.dark-mode{
+    color: var(--white-color);
+}
+
+/* TABLE */
+.areaTransactions table{
+    width: 98%;
+    height: 3rem;
+    margin: auto;
+    background: var(--gray-color);
+}
+
+thead{
+    height: 2.5rem;
+    background: var(--dark-mode);
+    color: var(--white-color);
+}
+
+thead.dark-mode{
+    background: var(--white-color);
+    color: var(--dark-mode);
+}
+
+tr{
+    border-bottom: 1px solid var(--dark-mode);
+    height: 2.5rem;
+}
+
+th{
+    text-transform: uppercase;
+}
+
+th:first-child{
+    border-top-left-radius: 4px;
+}
+
+th:last-child{
+    border-top-right-radius: 4px;
+}
+
+td{
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--dark-mode);
+}
+
+.delete{
+    width: 4rem;
+    height: 1.6rem;
+    background: var(--color-delete);
+    color: var(--white-color);
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.delete:hover{
+    background: var(--hover-delete);
+}
+
+/* FOOTER */
+footer{
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.footer{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.allRigth{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6rem;
+    margin-bottom: 0.4rem;
+}
+
+.social i{
+    color: var(--dark-mode);
+    font-size: 2rem
+}
+
+.social i.dark-mode{
+    color: var(--white-color);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px){
+    #mode-selector{
+        margin-right: 0.6rem;
+    }
+
+    .headerTop, .information{
+        width: 100%;
+    }
+
+    .areaModal{
+        width: 80%;
+        height: 60%;
+    }
+
+    .areaModal h2{
+        font-size: 1rem;
+    }
+
+    .areaModal label{
+        font-size: 0.8rem;
+    }
+
+    .buttonsModal button{
+        width: 18%;
+        height: 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .container{
+        width: 100%;
+    }
+}
+
+@media (max-width: 540px){
+    .footer{
+        flex-direction: column;
+        font-size: 0.8rem;
+    }
+
+    .social i{
+        color: var(--dark-mode);
+        font-size: 1.4rem
+    }
+}
+
+@media (max-width: 425px){
+    header{
+        height: 11rem;  
+    }
+
+    #mode-selector{
+        width: 6rem;
+        height: 1.5rem;
+        font-size: 0.7rem;
+    }
+
+    .areaInformation{
+        height: 5rem;
+    }
+
+    .moneyDeposit h2, .cashOut h2,
+    .amount h2{
+        font-size: 1rem;
+    }
+
+    .areaModal{
+        width: 90%;
+    }
+
+    .buttonsModal button{
+        width: 30%;
+    }
+
+    main{
+        margin-top: 0; 
+    }
+
+    .transaction h2{
+        font-size: 1rem;
+        margin-right: 0.3rem;
+    }
+
+    .transaction button{
+        width: 3rem;
+        height: 1.4rem;
+        font-size: 1rem;
+    }
+
+    .transactions h2{
+        font-size: 1rem;
+    }
+
+    th, td{
+        font-size: 0.8rem;
+    }
+
+    .delete{
+        width: 3rem;
+        height: 1.4rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 375px){
+    .areaModal{
+        height: 55%;
+    }
+}
+
+@media (max-width: 320px){
+    .areaInformation{
+        height: 4rem;
+    }
+
+    .moneyDeposit h2, .cashOut h2,
+    .amount h2{
+        font-size: 0.8rem;
+    }
+}

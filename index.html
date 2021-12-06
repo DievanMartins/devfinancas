@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Finanças</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <div class="headerTop">
+            <div class="mode">
+                <button id="mode-selector"><i class="fas fa-moon"></i>Dark Mode</button>
+            </div>
+            <div class="company">
+                <h1 id="logo">Dev Company</h1>
+            </div>
+        </div>
+        
+        <div class="information">
+            <div class="areaInformation">
+                <div class="moneyDeposit">
+                    <h2>Receitas</h2>
+                    <h2 id="amountPlus">R$ 0,00</h2>
+                </div>
+            </div>
+            <div class="areaInformation">
+                <div class="cashOut">
+                    <h2>Despesas</h2>
+                    <h2 id="amountMinus">R$ 0,00</h2>
+                </div>
+            </div>
+            <div class="areaInformation">
+                <div class="amount">
+                    <h2>Saldo atual</h2>
+                    <h2 id="amountTotal">R$ 0,00</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--MAIN-->
+    <main>
+        <div class="container">
+            <div class="transaction">
+                <h2>adicionar transação</h2>
+                <button id="openModal">+</button>
+            </div>
+            <div class="modal" id="close">
+                <div class="areaModal">
+                    <h2>transações</h2>
+                    <label>Nome da transação</label>
+                    <input type="text" id="nameTransactions" placeholder="Digite o nome da transação">
+                    <label>Data da transação</label>
+                    <input type="date" id="date">
+                    <label>Valor da transação</label>
+                    <input type="text" id="valueTransactions" placeholder="Digite (- valor) para despesas">
+                    <div class="buttonsModal">
+                        <button id="send">Adicionar</button>
+                        <button id="cancel">Cancelar</button>
+                    </div>     
+                </div>
+            </div>
+            <div class="transactions">
+                <h2>transações</h2>
+            </div>
+            <div class="areaTransactions">
+                <table rules="none">
+                    <thead>
+                      <tr>
+                        <th>Transação</th>
+                        <th>Valor</th>
+                        <th>data</th>
+                        <th>Remover</th>
+                      </tr>
+                    </thead>
+                    <tbody id="list"></tbody>
+                    <!--
+                    <tr id="tr">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <input class="delete" type="button" value="X" data-index=${index}>
+                        </td>
+                    </tr>-->
+                </table>
+            </div> 
+            
+        </div>    
+    </main>
+    
+    <!--FOOTER-->
+    <footer>
+        <div class="footer">
+            <div class="allRigth">
+                <p>
+                    Todos os direitos reservados
+                </p>
+                <p>&copy; Dev Company 2021</p>
+            </div>           
+            <div class="create">
+                <P>Created by Dievan Martins</P>
+                <div class="social">
+                <a href="https://github.com/DievanMartins" target="_blank"><i class="fab fa-github-square"></i></a>
+                <a href="https://www.linkedin.com/in/dievanmartins" target="_blank"><i class="fab fa-linkedin lin"></i></a> 
+            </div>
+        </div>
+        </div>  
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
